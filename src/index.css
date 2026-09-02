@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 12% 95%;
+    --foreground: 24 10% 15%;
+
+    --card: 40 12% 96%;
+    --card-foreground: 24 10% 15%;
+
+    --popover: 40 12% 96%;
+    --popover-foreground: 24 10% 15%;
+
+    --primary: 24 10% 20%;
+    --primary-foreground: 40 12% 98%;
+
+    --secondary: 35 15% 88%;
+    --secondary-foreground: 24 10% 25%;
+
+    --muted: 35 10% 90%;
+    --muted-foreground: 24 5% 45%;
+
+    --accent: 75 15% 40%;
+    --accent-foreground: 40 12% 98%;
+
+    --destructive: 10 30% 45%;
+    --destructive-foreground: 40 12% 98%;
+
+    --border: 35 10% 85%;
+    --input: 35 10% 85%;
+    --ring: 24 10% 20%;
+
+    --radius: 0.25rem;
+
+    --sidebar: 40 12% 94%;
+    --sidebar-background: 40 12% 94%;
+    --sidebar-foreground: 24 10% 20%;
+    --sidebar-primary: 24 10% 20%;
+    --sidebar-primary-foreground: 40 12% 98%;
+    --sidebar-accent: 35 15% 88%;
+    --sidebar-accent-foreground: 24 10% 25%;
+    --sidebar-border: 35 10% 85%;
+    --sidebar-ring: 24 10% 20%;
+
+    --chart-1: 24 10% 20%;
+    --chart-2: 75 15% 40%;
+    --chart-3: 35 20% 60%;
+    --chart-4: 40 10% 75%;
+    --chart-5: 25 15% 35%;
+
+    --spacing: 0.3rem;
+    --tracking-normal: 0.05em;
+    --shadow-sm: 0px 1px 2px 0px hsl(24 10% 10% / 0.02);
+    --shadow: 0px 2px 4px 0px hsl(24 10% 10% / 0.04);
+    --font-sans: 'Noto Sans SC', ui-sans-serif, system-ui;
+    --font-serif: 'Noto Serif SC', ui-serif, Georgia;
+    --font-mono: 'Fira Code', ui-monospace;
+  }
+
+  .dark {
+    --background: 24 10% 10%;
+    --foreground: 40 12% 90%;
+
+    --card: 24 10% 12%;
+    --card-foreground: 40 12% 90%;
+
+    --popover: 24 10% 14%;
+    --popover-foreground: 40 12% 90%;
+
+    --primary: 40 12% 85%;
+    --primary-foreground: 24 10% 10%;
+
+    --secondary: 24 5% 20%;
+    --secondary-foreground: 40 12% 90%;
+
+    --muted: 24 5% 18%;
+    --muted-foreground: 24 5% 60%;
+
+    --accent: 75 10% 55%;
+    --accent-foreground: 24 10% 10%;
+
+    --destructive: 10 40% 50%;
+    --destructive-foreground: 40 12% 98%;
+
+    --border: 24 5% 20%;
+    --input: 24 5% 20%;
+    --ring: 40 12% 85%;
+
+    --sidebar: 24 10% 8%;
+    --sidebar-background: 24 10% 8%;
+    --sidebar-foreground: 40 12% 80%;
+    --sidebar-primary: 40 12% 85%;
+    --sidebar-primary-foreground: 24 10% 10%;
+    --sidebar-accent: 24 5% 15%;
+    --sidebar-accent-foreground: 40 12% 90%;
+    --sidebar-border: 24 5% 15%;
+    --sidebar-ring: 40 12% 85%;
+
+    --chart-1: 40 12% 85%;
+    --chart-2: 75 10% 55%;
+    --chart-3: 35 20% 60%;
+    --chart-4: 40 10% 45%;
+    --chart-5: 25 15% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Noto Sans SC', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    letter-spacing: var(--tracking-normal);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1 {
+    @apply text-2xl font-bold leading-tight tracking-tight;
+  }
+}
+
+/* Cleaner numeric inputs inside dense tables */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+@media print {
+  /* Force light Zen tokens so printed output stays paper-white regardless of app color mode. */
+  :root,
+  .dark {
+    --background: 40 12% 95%;
+    --foreground: 24 10% 15%;
+    --card: 40 12% 96%;
+    --card-foreground: 24 10% 15%;
+    --popover: 40 12% 96%;
+    --popover-foreground: 24 10% 15%;
+    --primary: 24 10% 20%;
+    --primary-foreground: 40 12% 98%;
+    --secondary: 35 15% 88%;
+    --secondary-foreground: 24 10% 25%;
+    --muted: 35 10% 90%;
+    --muted-foreground: 24 5% 45%;
+    --accent: 75 15% 40%;
+    --accent-foreground: 40 12% 98%;
+    --destructive: 10 30% 45%;
+    --destructive-foreground: 40 12% 98%;
+    --border: 35 10% 85%;
+    --input: 35 10% 85%;
+    --ring: 24 10% 20%;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+  }
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}
